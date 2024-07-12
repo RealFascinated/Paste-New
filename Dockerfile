@@ -52,7 +52,7 @@ RUN set -x \
 EXPOSE 8080
 ENV PORT=8080
 
-COPY --from=frontend ./ /app/frontend
+COPY --from=frontend /app /app/frontend
 
 RUN ls -la /app/frontend
 
