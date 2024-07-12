@@ -8,7 +8,7 @@ import "highlight.js/styles/atom-one-dark.css"; // Import the default Highlight.
 
 export function HighlightCode({ text }: CodeHighlighter) {
   useEffect(() => {
-    hljs.initHighlighting();
+    hljs.highlightAll();
   }, []);
 
   return (
