@@ -54,5 +54,7 @@ ENV PORT=8080
 
 COPY --from=frontend ./ /app/frontend
 
+RUN ls -la /app/frontend
+
 # Run the Paste application and the Fr
-ENTRYPOINT ["sh", "-c", "./bin/paste & cd /app/frontend && npm run start"]
+ENTRYPOINT sh -c ./bin/paste & cd /app/frontend && npm run start
