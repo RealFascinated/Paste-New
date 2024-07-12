@@ -43,9 +43,10 @@ COPY ./Makefile ./
 RUN go build -o ./bin/paste ./cmd/paste 
 
 # Install NodeJS
-RUN apt install curl 
-RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
-RUN nvm install 20.13.1
+RUN set -x \
+    && curl -sL 'https://deb.nodesource.com/setup_21.x' | bash - \
+    && apt-get -y install nodejs \
+    && ln -s /usr/bin/nodejs /usr/local/bin/node
 
 # Expose the port that the application listens on
 EXPOSE 8080
