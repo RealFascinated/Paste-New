@@ -3,6 +3,8 @@ import { pasteFont } from "../common/font/font";
 import { ThemeProvider } from "../components/theme-provider";
 import "./globals.css";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata() {
   const config = await getConfig();
 
