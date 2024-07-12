@@ -57,4 +57,4 @@ COPY --from=frontend /app /app/frontend
 RUN ls -la /app/frontend
 
 # Run the Paste application and the Fr
-ENTRYPOINT sh -c ./bin/paste & cd /app/frontend && npm run start -p 3000
+ENTRYPOINT sh -c ./bin/paste & cd /app/frontend && npm run start
