@@ -48,7 +48,7 @@ RUN go build -o ./bin/paste ./cmd/paste
 EXPOSE 8080
 ENV PORT=8080
 
-COPY --from=frontend . /app/frontend
+COPY --from=frontend ./ /app/frontend
 
 # Run the Paste application and the Fr
-ENTRYPOINT ["sh", "-c", "./bin/paste & ./frontend/node_modules/.bin/next start"]
+ENTRYPOINT ["sh", "-c", "./bin/paste & /app/frontend/node_modules/.bin/next start"]
