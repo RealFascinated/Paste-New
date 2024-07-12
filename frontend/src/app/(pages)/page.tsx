@@ -1,6 +1,6 @@
-import { getConfig } from "@/common/config";
-import { uploadPaste } from "@/common/paste";
 import { redirect } from "next/navigation";
+import { getConfig } from "../../common/config";
+import { uploadPaste } from "../../common/paste";
 
 export default async function Home() {
   const config = await getConfig(); // Get the config for the site

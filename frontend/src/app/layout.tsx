@@ -1,6 +1,6 @@
-import { getConfig } from "@/common/config";
-import { pasteFont } from "@/common/font/font";
-import { ThemeProvider } from "@/components/theme-provider";
+import { getConfig } from "../common/config";
+import { pasteFont } from "../common/font/font";
+import { ThemeProvider } from "../components/theme-provider";
 import "./globals.css";
 
 export async function generateMetadata() {

@@ -1,7 +1,7 @@
-import { getConfig } from "@/common/config";
-import { getPaste } from "@/common/paste";
-import { formatBytes } from "@/common/utils";
 import { redirect } from "next/navigation";
+import { getConfig } from "../../../../common/config";
+import { getPaste } from "../../../../common/paste";
+import { formatBytes } from "../../../../common/utils";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const config = await getConfig();
