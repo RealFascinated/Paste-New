@@ -1,4 +1,4 @@
-import { Paste, PasteResponse } from "@/types/paste";
+import { Paste, PasteResponse } from "../types/paste";
 
 /**
  * Uploads a paste to paste.fascinated.cc
