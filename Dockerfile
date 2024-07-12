@@ -33,6 +33,8 @@ RUN go run github.com/steebchen/prisma-client-go prefetch
 # Copy the source code to the container
 COPY ./backend ./
 
+ENV MONGO_URI=
+
 # Generate the Prisma Client Go client
 RUN go run github.com/steebchen/prisma-client-go generate
 
@@ -49,4 +51,4 @@ ENV PORT=8080
 COPY --from=frontend . /app/frontend
 
 # Run the Paste application and the Fr
-CMD ./bin/paste && ./frontend/node_modules/.bin/next start
+ENTRYPOINT ["sh", "-c", "./bin/paste & ./frontend/node_modules/.bin/next start"]
