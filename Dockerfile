@@ -45,7 +45,6 @@ RUN go build -o ./bin/paste ./cmd/paste
 # Install NodeJS
 RUN apt install curl 
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
-RUN source ~/.bashrc
 RUN nvm install 20.13.1
 
 # Expose the port that the application listens on
