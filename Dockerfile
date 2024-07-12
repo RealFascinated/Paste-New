@@ -33,8 +33,6 @@ RUN go run github.com/steebchen/prisma-client-go prefetch
 # Copy the source code to the container
 COPY ./backend ./
 
-ENV MONGO_URI=
-
 # Generate the Prisma Client Go client
 RUN go run github.com/steebchen/prisma-client-go generate
 
@@ -44,6 +42,12 @@ COPY ./Makefile ./
 # Build the Go application
 RUN go build -o ./bin/paste ./cmd/paste 
 
+# Install NodeJS
+RUN apt install curl 
+RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+RUN source ~/.bashrc
+RUN nvm install 20.13.1
+
 # Expose the port that the application listens on
 EXPOSE 8080
 ENV PORT=8080
@@ -51,4 +55,4 @@ ENV PORT=8080
 COPY --from=frontend ./ /app/frontend
 
 # Run the Paste application and the Fr
-ENTRYPOINT ["sh", "-c", "./bin/paste & /app/frontend/node_modules/.bin/next start"]
+ENTRYPOINT ["sh", "-c", "./bin/paste & cd /cd/frontend && npm run start"]
